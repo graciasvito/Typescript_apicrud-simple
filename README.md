@@ -8,7 +8,6 @@
   
   
   ```typescript
-"devDependencies": {
  "typescript": "^5.0.4"
   },
   "dependencies": {
@@ -32,4 +31,23 @@
 }
 ```
 
+  8. Buatlah server dengan Express dengan membuat file index.ts, dengan kode berikut sebagai contoh 
+
+```typescript
+import express, { Express, Request, Response } from "express";
+import { store } from "./models/user.model";
+
+const app: Express = express();
+app.use(express.json());
+
+const PORT: number = 3000;
+
+app.listen(PORT, (): void => {
+  console.log(`Service running at PORT: ${PORT}`);
+});
+
+```
+
+9. Periksa apakah server Express sudah berfungsi dengan command `ts-node src\index.ts`. Jika sudah tidak ada error, maka terminal akan menampilkan 
+``` Service running at PORT: 3000 ```
  
